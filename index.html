@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÓC-TELL - Tepache</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+
+        @keyframes float {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: left;
+        }
+
+        .logo img{
+            height: auto-fit;
+            width: auto-fit;
+        }
+
+        .brand-tagline {
+            text-align: right;
+        }
+
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+
+        .tagline {
+            font-size: 1rem;
+            color: #333;
+        }
+
+
+        /* Navigation */
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 40px;
+        }
+
+
+        .nav-item {
+            position: relative;
+        }
+
+
+        .nav-link {
+            text-decoration: none;
+            color: #2C3E50;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+
+        .nav-link:hover {
+            color: #2C3E50;
+            transform: translateY(-2px);
+        }
+
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(244, 208, 63, 0.1), rgba(247, 220, 111, 0.1));
+            padding: 60px 0;
+            position: relative;
+        }
+
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
+        }
+
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+
+        .hero-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+
+        .cta-button {
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            color: #2C3E50;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(244, 208, 63, 0.4);
+        }
+
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(244, 208, 63, 0.6);
+        }
+
+
+        .image-caption {
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+            color: #7F8C8D;
+        }
+
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+        }
+
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            border-radius: 2px;
+        }
+
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(244, 208, 63, 0.1), rgba(247, 220, 111, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+
+        .product-orange {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+        }
+
+
+        .product-pineapple {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+        }
+
+
+        .product-grape {
+            background: linear-gradient(135deg, #8E44AD, #E91E63);
+        }
+
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+
+        .view-all-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+
+        .view-all-btn button {
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            color: #2C3E50;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(244, 208, 63, 0.4);
+        }
+
+
+        .view-all-btn button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(244, 208, 63, 0.6);
+        }
+
+
+        /* Info Sections */
+        .info-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+
+        .info-content {
+            padding: 30px;
+        }
+
+
+        .info-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 20px;
+        }
+
+
+        .info-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+
+        .info-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+
+        .info-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+
+        .info-image:hover img {
+            transform: scale(1.05);
+        }
+
+
+        /* Blog Section */
+        .blog {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 60px 0;
+        }
+
+
+        .blog-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+
+        .blog-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+
+        .blog-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 20px;
+        }
+
+
+        .blog-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2C3E50, #34495E);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: #F4D03F;
+        }
+
+
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2C3E50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(244, 208, 63, 0.4);
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+
+            .hero-content,
+            .info-grid,
+            .blog-content {
+                grid-template-columns: 1fr;
+            }
+
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .brand-name {
+                font-size: 24px;
+            }
+
+
+            .hero-text {
+                padding: 20px;
+            }
+        }
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .hero-content,
+        .product-card,
+        .info-content {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+
+        .product-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+
+        .product-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(135deg, #f4e06d, #f9d71c);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+
+        .nav-item {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+
+        .nav-item:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                        url('Background1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            overflow: hidden;
+        }
+
+
+        /* Brand Logo */
+        .brand-logo {
+            position: absolute;
+            top: 50%;
+            right: 80px;
+            transform: translateY(-50%);
+            z-index: 3;
+        }
+
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: 900;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -2px;
+            margin-bottom: 5px;
+        }
+
+
+        .logo-subtext {
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+            letter-spacing: 3px;
+        }
+
+
+        /* Main Content */
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+
+        .cta-button {
+            background: linear-gradient(135deg, #f9d71c, #f4e06d);
+            color: #333;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(244, 224, 109, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(244, 224, 109, 0.6);
+            background: linear-gradient(135deg, #f4e06d, #f9d71c);
+        }
+
+
+        /* Bottom Section */
+        .bottom-section {
+            background: linear-gradient(135deg, #f4e06d, #f9d71c);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+
+        .bottom-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .bottom-title::before,
+        .bottom-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background-color: #333;
+        }
+
+
+        .bottom-title::before {
+            left: -120px;
+        }
+
+
+        .bottom-title::after {
+            right: -120px;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+
+            .hero {
+                height: 500px;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+
+            .brand-logo {
+                position: static;
+                transform: none;
+                margin-bottom: 30px;
+            }
+
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+
+            .logo-text {
+                font-size: 36px;
+            }
+
+
+            .bottom-title::before,
+            .bottom-title::after {
+                width: 50px;
+            }
+
+
+            .bottom-title::before {
+                left: -70px;
+            }
+
+
+            .bottom-title::after {
+                right: -70px;
+            }
+        }
+
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+
+        .brand-logo {
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Logo trang Web">
+                </div>
+                <div class="brand-tagline">
+                    <div class="brand-name">TEPACHE</div>
+                    <div class="tagline">Nước uống lên men tự nhiên</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="about.html" class="nav-item">Câu chuyện</a>
+            <a href="product.html" class="nav-item">Sản phẩm</a>
+            <a href="tepache101.html" class="nav-item">Tepache 101</a>
+            <a href="blog.html" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">Liên hệ</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+
+        </div>
+
+
+        <div class="brand-logo">
+            <h1 class="hero-title">CÓC-TELL</h1>
+            <h1 class="hero-title">CÂU CHUYỆN CỦA CÓC-TELL</h1>
+            <a href="#" class="cta-button">XEM CÂU CHUYỆN</a>
+        </div>
+    </section>
+
+
+    <!-- Bottom Section -->
+    <section class="bottom-section">
+        <h2 class="bottom-title">Tepache dành cho mọi nhà</h2>
+    </section>
+
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">SẢN PHẨM</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image product-orange">
+                        <img src="Cam.png" alt="Blog featured image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cam dứa</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-pineapple">
+                        <img src="Dứa.png" alt="Blog featured image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Truyền thống</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-apple">
+                        <img src="Táo.png" alt="Blog featured image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Táo dứa</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-btn">
+                <button>XEM TẤT CẢ</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Tepache 101 Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-image">
+                    <img src="Background2.png" alt="Tepache brewing process">
+                </div>
+                <div class="info-content">
+                    <h2 class="info-title">TEPACHE 101</h2>
+                    <p class="info-text">
+                        Tepache là loại nước uống lên men truyền thống của Mexico, được làm từ dứa, đường mía và thảo mộc.
+                    </p>
+                    <p class="info-text">
+                        Thức uống này có hương vị ngọt, chua hài hòa và chứa cặn đua làm độ ngon có thể bén lưỡi dịch. Cóc-tell
+                        đem đến sự kết hợp hoàn hảo giữa truyền thống và hiện đại, mang hương vị thuần Việt vào một ly
+                        khoẻ để lon cạnh bạn.
+                    </p>
+                    <button class="cta-button">XEM TẤT CẢ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <div class="container">
+            <div class="blog-content">
+                <div class="blog-text">
+                    <h2 class="blog-title">BLOG</h2>
+                    <p class="blog-description">
+                        Khám phá thế giới hương vị quy cách hương lạ từ Cóc-tell cùng thực chế cocktail cảng
+                        Tepache, theo dõng xanh tú quyền cả hạnh phúc của sức chia. Đà ển cuộc vương cả
+                        độ len men Việt Nam.
+                    </p>
+                    <button class="cta-button">XEM TẤT CẢ</button>
+                </div>
+                <div class="info-image">
+                    <img src="Background3.png" alt="Blog featured image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CỐC-TELL</h3>
+                    <p>Nước uống lên men tự nhiên</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">@</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>KẾT NỐI CỐC-TELL</h3>
+                    <p>Hotline: 0967696505-101</p>
+                    <p>cocktell@gmail.com</p>
+                    <p>Thôn 5, Thạch Thất, Hà Nội</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add smooth scroll functionality here if needed
+            });
+        });
+
+
+        // Add interactive effects
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+           
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
