@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CỐC-TELL - Sản phẩm Tepache</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2C3E50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .brand-tagline {
+            text-align: right;
+        }
+
+        .brand-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #34495E;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(240, 220, 100, 0.8);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #2C3E50;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .nav-link.active {
+            background: rgba(44, 62, 80, 0.1);
+            color: #2C3E50;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #2C3E50;
+            transform: translateY(-2px);
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 40px 0;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .product-card {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 500px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.02);
+            z-index: 2;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Product Card Colors */
+        .product-pineapple {
+            background: linear-gradient(135deg, #F9E79F, #F7DC6F);
+        }
+
+        .product-orange {
+            background: linear-gradient(135deg, #FADBD8, #F1948A);
+        }
+
+        .product-passionfruit {
+            background: linear-gradient(135deg, #E8DAEF, #D7BDE2);
+        }
+
+        .product-apple {
+            background: linear-gradient(135deg, #D5F4E6, #A9DFBF);
+        }
+
+        .product-image {
+            width: 200px;
+            height: 280px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .product-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Product Package Designs */
+        .package-design {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-design::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .package-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .package-brand {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .package-flavor {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .package-subtitle {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .package-fruit {
+            width: 60px;
+            height: 60px;
+            opacity: 0.8;
+        }
+
+        /* Individual package backgrounds */
+        .package-pineapple {
+            background: linear-gradient(135deg, #F39C12, #E67E22);
+        }
+
+        .package-orange {
+            background: linear-gradient(135deg, #E74C3C, #C0392B);
+        }
+
+        .package-passionfruit {
+            background: linear-gradient(135deg, #8E44AD, #71287F);
+        }
+
+        .package-apple {
+            background: linear-gradient(135deg, #27AE60, #219A52);
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .product-description {
+            color: #555;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
+            color: #2C3E50;
+            padding: 40px 0;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 20px;
+        }
+
+        .footer-info {
+            color: #2C3E50;
+            line-height: 1.6;
+        }
+
+        .footer-info p {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .footer-connect {
+            text-align: right;
+        }
+
+        .connect-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: #2C3E50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.4);
+            background: #34495E;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                margin: 0 20px;
+            }
+
+            .product-card {
+                padding: 40px 20px;
+                min-height: 400px;
+            }
+
+            .product-image {
+                width: 150px;
+                height: 210px;
+            }
+
+            .product-title {
+                font-size: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-connect {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .brand-name {
+                font-size: 28px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .product-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .product-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .product-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        /* Fruit icons using CSS */
+        .fruit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .pineapple-icon::before {
+            content: '🍍';
+            font-size: 40px;
+        }
+
+        .orange-icon::before {
+            content: '🍊';
+            font-size: 40px;
+        }
+
+        .passionfruit-icon::before {
+            content: '🟣';
+            font-size: 40px;
+        }
+
+        .apple-icon::before {
+            content: '🍏';
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">CỐC-TELL</div>
+                <div class="brand-tagline">
+                    <div class="brand-name">TEPACHE</div>
+                    <div class="tagline">Nước dứa lên men tự nhiên</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Câu chuyện</a></li>
+                <li class="nav-item"><a href="#" class="nav-link active">Sản phẩm</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Tepache 101</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Tepache Dứa -->
+                <div class="product-card product-pineapple">
+                    <div class="product-image">
+                        <div class="package-design package-pineapple">
+                            <div class="package-content">
+                                <div class="package-brand">CỐC-TELL</div>
+                                <div class="package-subtitle">ORGANIC</div>
+                                <div class="package-flavor">VỊ<br>DỨA</div>
+                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
+                                <div class="fruit-icon pineapple-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="product-title">Tepache Dứa</h2>
+                    <p class="product-description">
+                        Vị nguyên bản từ dứa lên men truyền thống, chua dịu, hậu ngọt nhẹ, dễ uống hàng ngày. Phù hợp với người mới bắt đầu.
+                    </p>
+                </div>
+
+                <!-- Tepache Cam Dứa -->
+                <div class="product-card product-orange">
+                    <div class="product-image">
+                        <div class="package-design package-orange">
+                            <div class="package-content">
+                                <div class="package-brand">CỐC-TELL</div>
+                                <div class="package-subtitle">ORGANIC</div>
+                                <div class="package-flavor">VỊ<br>CAM<br>DỪA</div>
+                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
+                                <div class="fruit-icon orange-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="product-title">Tepache Cam Dừa</h2>
+                    <p class="product-description">
+                        Sự kết hợp giữa dứa và cam tạo nên một trải nghiệm mát lành, nhẹ nhàng. Vị chua thanh rất hợp khi đùng kèm món nướng hoặc sau bữa trưa.
+                    </p>
+                </div>
+
+                <!-- Tepache Chanh Leo Dứa -->
+                <div class="product-card product-passionfruit">
+                    <div class="product-image">
+                        <div class="package-design package-passionfruit">
+                            <div class="package-content">
+                                <div class="package-brand">CỐC-TELL</div>
+                                <div class="package-subtitle">ORGANIC</div>
+                                <div class="package-flavor">VỊ<br>CHANH LEO<br>DỨA</div>
+                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
+                                <div class="fruit-icon passionfruit-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="product-title">Tepache Chanh Leo Dứa</h2>
+                    <p class="product-description">
+                        Vị chanh leo chua nhẹ, thơm nồng kết hợp cùng men dứa tạo nên cảm giác tươi mới, thanh lọc - phù hợp cho những ai thích trải nghiệm vị "lạ".
+                    </p>
+                </div>
+
+                <!-- Tepache Táo Dứa -->
+                <div class="product-card product-apple">
+                    <div class="product-image">
+                        <div class="package-design package-apple">
+                            <div class="package-content">
+                                <div class="package-brand">CỐC-TELL</div>
+                                <div class="package-subtitle">ORGANIC</div>
+                                <div class="package-flavor">VỊ<br>TÁO<br>DỨA</div>
+                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
+                                <div class="fruit-icon apple-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="product-title">Tepache Táo Dứa</h2>
+                    <p class="product-description">
+                        Hơi ấm của táo khiến vị Tepache trở nên dịu dàng, ấm bụng - lý tương cho những ngày se lạnh hoặc buổi sáng nhẹ nhàng.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">CỐC-TELL</div>
+                    <div class="footer-info">
+                        <p>Hotline: 0975856303</p>
+                        <p>cocktell@gmail.com</p>
+                        <p>Thôn 5, Thạch Thất, Hà Nội</p>
+                    </div>
+                </div>
+                <div class="footer-connect">
+                    <h3 class="connect-title">Kết nối Cốc-tell</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">@</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Add interactive product card effects
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) translateY(-10px)';
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) translateY(0)';
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+
+        // Add hover effects for social icons
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add package design animation
+        document.querySelectorAll('.package-design').forEach(package => {
+            package.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            package.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
+
