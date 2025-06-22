@@ -57,84 +57,61 @@
         }
 
         .logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: #2C3E50;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: strecth;
         }
 
-        .brand-tagline {
+        .logo img{
+            height: 180px;
+            width: auto;
+        }
+
+        .tagline {
             text-align: right;
         }
 
         .brand-name {
-            font-size: 36px;
+            font-size: 2rem;
             font-weight: bold;
-            color: #2C3E50;
+            color: #333;
             margin-bottom: 5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        .tagline {
-            font-size: 16px;
-            color: #34495E;
-            font-style: italic;
+        .subtitle {
+            font-size: 1rem;
+            color: #555;
         }
 
         /* Navigation */
         .nav {
-            background: rgba(240, 220, 100, 0.8);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
-        .nav-menu {
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
-            list-style: none;
             gap: 50px;
+            padding: 0 20px;
         }
 
         .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
+            color: #333;
             text-decoration: none;
-            color: #2C3E50;
-            font-weight: 600;
-            padding: 12px 20px;
+            font-weight: 500;
+            padding: 10px 20px;
             border-radius: 25px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            font-size: 16px;
         }
 
-        .nav-link.active {
-            background: rgba(44, 62, 80, 0.1);
-            color: #2C3E50;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-link:hover::before {
-            left: 0;
-        }
-
-        .nav-link:hover {
-            color: #2C3E50;
+        .nav-item:hover,
+        .nav-item.active {
+            background: #f4d03f;
+            color: #333;
             transform: translateY(-2px);
         }
 
