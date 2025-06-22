@@ -34,11 +34,13 @@
         }
 
         .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            display: flex;
+            align-items: strecth;
+        }
+
+        .logo img{
+            height: 200px;
+            width: auto;
         }
 
         .tagline {
@@ -278,7 +280,9 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <div class="logo">CÓC-TELL</div>
+            <div class="logo">
+                <img src="logo.png" alt="Logo trang Web">
+            </div>
             <div class="tagline">
                 <div class="brand-name">TEPACHE</div>
                 <div class="subtitle">Nước dứa lên men tự nhiên</div>
@@ -316,7 +320,7 @@
         </div>
         
         <div class="content-image">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjRkMDNmO3N0b3Atb3BhY2l0eTowLjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y3ZGM2ZjtzdG9wLW9wYWNpdHk6MC4zIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgCiAgPCEtLSBCYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIAogIDwhLS0gUGluZWFwcGxlIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwLCA1MCkiPgogICAgPCEtLSBQaW5lYXBwbGUgYm9keSAtLT4KICAgIDxlbGxpcHNlIGN4PSI4MCIgY3k9IjI1MCIgcng9IjgwIiByeT0iMjAwIiBmaWxsPSIjZmZiMzMzIiBvcGFjaXR5PSIwLjgiLz4KICAgIDxlbGxpcHNlIGN4PSI4NSIgY3k9IjI0MCIgcng9IjcwIiByeT0iMTgwIiBmaWxsPSIjZmZjNjMzIi8+CiAgICAKICAgIDwhLS0gUGluZWFwcGxlIGxlYXZlcyAtLT4KICAgIDxwYXRoIGQ9Ik0gNDAgMTAwIEwgNjAgNDAgTCA4MCA4MCBMIDEwMCAzMCBMIDEyMCA3MCBMIDE0MCAyMCBMIDEyMCAxMDAiIGZpbGw9IiM0NGE0NzciIG9wYWNpdHk9IjAuOCIvPgogICAgPHBhdGggZD0iTSA0NSA5MCBMIDY1IDM1IEwgODUgNzUgTCAxMDUgMjUgTCAxMjUgNjUgTCAxMzUgMTUgTCAxMTUgOTUiIGZpbGw9IiM1NWI1ODgiLz4KICA8L2c+CiAgCiAgPCEtLSBCb3R0bGVzIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI1MCwgMTUwKSI+CiAgICA8IS0tIEJvdHRsZSAxIC0tPgogICAgPHJlY3QgeD0iMjAiIHk9IjEwMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzMzODg2NiIgb3BhY2l0eT0iMC44IiByeD0iNSIvPgogICAgPHJlY3QgeD0iMjUiIHk9IjgwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiMyMjY2NDQiLz4KICAgIDxyZWN0IHg9IjI1IiB5PSIxMTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxNDAiIGZpbGw9IiNmZmI4MzMiIG9wYWNpdHk9IjAuNyIvPgogICAgPGNpcmNsZSBjeD0iNDAiIGN5PSI5NSIgcj0iNSIgZmlsbD0iI2ZmMzMzMyIvPgogICAgCiAgICA8IS0tIEJvdHRsZSAyIC0tPgogICAgPHJlY3QgeD0iODAiIHk9IjEyMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzMzODg2NiIgb3BhY2l0eT0iMC44IiByeD0iNSIvPgogICAgPHJlY3QgeD0iODUiIHk9IjEwMCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMjI2NjQ0Ii8+CiAgICA8cmVjdCB4PSI4NSIgeT0iMTMwIiB3aWR0aD0iMzAiIGhlaWdodD0iMTQwIiBmaWxsPSIjZmZiODMzIiBvcGFjaXR5PSIwLjciLz4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjExNSIgcj0iNSIgZmlsbD0iI2ZmMzMzMyIvPgogICAgCiAgICA8IS0tIEJvdHRsZSAzIC0tPgogICAgPHJlY3QgeD0iMTQwIiB5PSI4MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzMzODg2NiIgb3BhY2l0eT0iMC44IiByeD0iNSIvPgogICAgPHJlY3QgeD0iMTQ1IiB5PSI2MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMjI2NjQ0Ii8+CiAgICA8cmVjdCB4PSIxNDUiIHk9IjkwIiB3aWR0aD0iMzAiIGhlaWdodD0iMTQwIiBmaWxsPSIjZmZiODMzIiBvcGFjaXR5PSIwLjciLz4KICAgIDxjaXJjbGUgY3g9IjE2MCIgY3k9Ijc1IiByPSI1IiBmaWxsPSIjZmYzMzMzIi8+CiAgPC9nPgogIAogIDwhLS0gRGVjb3JhdGl2ZSBlbGVtZW50cyAtLT4KICA8Y2lyY2xlIGN4PSI0MDAiIGN5PSI1MDAiIHI9IjMwIiBmaWxsPSIjZjRkMDNmIiBvcGFjaXR5PSIwLjMiLz4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwMCIgcj0iMjAiIGZpbGw9IiNmN2RjNmYiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjQyMCIgY3k9IjEwMCIgcj0iMTUiIGZpbGw9IiNmNGQwM2YiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4K" alt="Tepache bottles with pineapple">
+            <img src="tepache101.jpg" alt="Tepache bottles with pineapple">
         </div>
     </main>
 
