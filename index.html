@@ -167,9 +167,29 @@
 
 
         .hero-image {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
+        }
+
+
+        .hero-image img {
             width: 1200px;
             height: 801px;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+
+        .hero-image:hover img {
+            transform: scale(1.05);
         }
 
 
