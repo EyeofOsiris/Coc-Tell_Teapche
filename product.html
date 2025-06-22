@@ -255,81 +255,74 @@
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, #F4D03F, #F7DC6F);
-            color: #2C3E50;
-            padding: 40px 0;
-            margin-top: 0;
+            background: linear-gradient(135deg, #f4d03f, #f7dc6f);
+            padding: 50px 0;
+            margin-top: 80px;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+        .footer-left {
+            text-align: center;
         }
 
         .footer-logo {
-            font-size: 28px;
+            font-size: 2rem;
             font-weight: bold;
-            color: #2C3E50;
+            color: #333;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .footer-info {
-            color: #2C3E50;
-            line-height: 1.6;
+        .contact-info {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
-        .footer-info p {
-            margin-bottom: 5px;
-            font-weight: 500;
+        .footer-right {
+            text-align: center;
         }
 
-        .footer-connect {
-            text-align: right;
-        }
-
-        .connect-title {
-            font-size: 20px;
+        .social-title {
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #2C3E50;
+            color: #333;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
 
         .social-icons {
             display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 20px;
+            justify-content: center;
         }
 
         .social-icon {
-            width: 45px;
-            height: 45px;
-            background: #2C3E50;
+            width: 50px;
+            height: 50px;
+            background: #333;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
+            font-size: 1.5rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
         }
 
         .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.4);
-            background: #34495E;
+            background: #555;
+            transform: translateY(-5px);
         }
 
         /* Responsive Design */
@@ -459,14 +452,12 @@
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="container">
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#" class="nav-link">Câu chuyện</a></li>
-                <li class="nav-item"><a href="#" class="nav-link active">Sản phẩm</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Tepache 101</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
-            </ul>
+        <div class="nav-content">
+            <a href="#" class="nav-item">Câu chuyện</a>
+            <a href="#" class="nav-item">Sản phẩm</a>
+            <a href="#" class="nav-item active">Tepache 101</a>
+            <a href="#" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">Liên hệ</a>
         </div>
     </nav>
 
@@ -554,24 +545,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">CÓC-TELL</div>
-                    <div class="footer-info">
-                        <p>Hotline: 0975856303</p>
-                        <p>cocktell@gmail.com</p>
-                        <p>Thôn 5, Thạch Thất, Hà Nội</p>
-                    </div>
-                </div>
-                <div class="footer-connect">
-                    <h3 class="connect-title">Kết nối Cóc-tell</h3>
+                <div class="footer-section">
+                    <h3>CÓC-TELL</h3>
+                    <p>Nước uống lên men tự nhiên</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon">f</a>
                         <a href="#" class="social-icon">📷</a>
                         <a href="#" class="social-icon">@</a>
                     </div>
+                </div>
+                <div class="footer-section">
+                    <h3>KẾT NỐI CÓC-TELL</h3>
+                    <p>Hotline: 0967696505-101</p>
+                    <p>cocktell@gmail.com</p>
+                    <p>Thôn 5, Thạch Thất, Hà Nội</p>
                 </div>
             </div>
         </div>
