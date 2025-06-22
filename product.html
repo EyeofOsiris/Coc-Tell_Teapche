@@ -190,35 +190,10 @@
             z-index: 1;
         }
 
-        .package-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .package-brand {
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .package-flavor {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .package-subtitle {
-            font-size: 12px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
-
-        .package-fruit {
-            width: 60px;
-            height: 60px;
-            opacity: 0.8;
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Individual package backgrounds */
@@ -404,34 +379,6 @@
         .product-card:nth-child(4) {
             animation-delay: 0.3s;
         }
-
-        /* Fruit icons using CSS */
-        .fruit-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .pineapple-icon::before {
-            content: '🍍';
-            font-size: 40px;
-        }
-
-        .orange-icon::before {
-            content: '🍊';
-            font-size: 40px;
-        }
-
-        .passionfruit-icon::before {
-            content: '🟣';
-            font-size: 40px;
-        }
-
-        .apple-icon::before {
-            content: '🍏';
-            font-size: 40px;
-        }
     </style>
 </head>
 <body>
@@ -454,8 +401,8 @@
     <nav class="nav">
         <div class="nav-content">
             <a href="#" class="nav-item">Câu chuyện</a>
-            <a href="#" class="nav-item">Sản phẩm</a>
-            <a href="#" class="nav-item active">Tepache 101</a>
+            <a href="#" class="nav-item active">Sản phẩm</a>
+            <a href="#" class="nav-item">Tepache 101</a>
             <a href="#" class="nav-item">Blog</a>
             <a href="#" class="nav-item">Liên hệ</a>
         </div>
@@ -469,13 +416,7 @@
                 <div class="product-card product-pineapple">
                     <div class="product-image">
                         <div class="package-design package-pineapple">
-                            <div class="package-content">
-                                <div class="package-brand">CỐC-TELL</div>
-                                <div class="package-subtitle">ORGANIC</div>
-                                <div class="package-flavor">VỊ<br>DỨA</div>
-                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
-                                <div class="fruit-icon pineapple-icon"></div>
-                            </div>
+                            <img src="Dứa.png" alt="Pineapple Package" class="package-image">
                         </div>
                     </div>
                     <h2 class="product-title">Tepache Dứa</h2>
@@ -488,13 +429,7 @@
                 <div class="product-card product-orange">
                     <div class="product-image">
                         <div class="package-design package-orange">
-                            <div class="package-content">
-                                <div class="package-brand">CỐC-TELL</div>
-                                <div class="package-subtitle">ORGANIC</div>
-                                <div class="package-flavor">VỊ<br>CAM<br>DỪA</div>
-                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
-                                <div class="fruit-icon orange-icon"></div>
-                            </div>
+                            <img src="Cam.png" alt="Orange Package" class="package-image">
                         </div>
                     </div>
                     <h2 class="product-title">Tepache Cam Dừa</h2>
@@ -507,13 +442,7 @@
                 <div class="product-card product-passionfruit">
                     <div class="product-image">
                         <div class="package-design package-passionfruit">
-                            <div class="package-content">
-                                <div class="package-brand">CỐC-TELL</div>
-                                <div class="package-subtitle">ORGANIC</div>
-                                <div class="package-flavor">VỊ<br>CHANH LEO<br>DỨA</div>
-                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
-                                <div class="fruit-icon passionfruit-icon"></div>
-                            </div>
+                            <img src="Chanh leo.png" alt="Passion Fruit Package" class="package-image">
                         </div>
                     </div>
                     <h2 class="product-title">Tepache Chanh Leo Dứa</h2>
@@ -526,13 +455,7 @@
                 <div class="product-card product-apple">
                     <div class="product-image">
                         <div class="package-design package-apple">
-                            <div class="package-content">
-                                <div class="package-brand">CỐC-TELL</div>
-                                <div class="package-subtitle">ORGANIC</div>
-                                <div class="package-flavor">VỊ<br>TÁO<br>DỨA</div>
-                                <div class="package-subtitle">FERMENTED PINEAPPLE</div>
-                                <div class="fruit-icon apple-icon"></div>
-                            </div>
+                            <img src="Táo.png" alt="Apple Package" class="package-image">
                         </div>
                     </div>
                     <h2 class="product-title">Tepache Táo Dứa</h2>
