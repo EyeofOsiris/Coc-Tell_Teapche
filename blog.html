@@ -242,24 +242,53 @@
             justify-content: center;
         }
 
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background: #333;
-            border-radius: 50%;
+        .social-icons {
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: white;
+            gap: 15px;
+            margin-top: 40px;
+        }
+    
+        .social-icon {
+            font-size: 32px;
             text-decoration: none;
-            font-size: 1.5rem;
             transition: all 0.3s ease;
         }
-
-        .social-icon:hover {
-            background: #555;
-            transform: translateY(-5px);
+        
+        /* Facebook */
+        .social-icon.facebook {
+            color: #1877F2;
         }
+        
+        .social-icon.facebook:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2px 6px rgba(24, 119, 242, 0.4);
+        }
+        
+        /* Instagram with gradient text */
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        
+        .social-icon.instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2px 6px rgba(221, 42, 123, 0.4);
+        }
+        
+        /* TikTok (primary red/magenta) */
+        .social-icon.tiktok {
+            color: #FE2C55;
+        }
+        
+        .social-icon.tiktok:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2px 6px rgba(254, 44, 85, 0.4);
+        }
+
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -381,9 +410,15 @@
                     <h3>CÓC-TELL</h3>
                     <p>Nước uống lên men tự nhiên</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">📷</a>
-                        <a href="#" class="social-icon">@</a>
+                        <a href="https://www.facebook.com/profile.php?id=61577094494916" class="social-icon facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-icon instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com" class="social-icon tiktok" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-section">
